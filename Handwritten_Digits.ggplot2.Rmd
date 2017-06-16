@@ -20,7 +20,7 @@ library(ggplot2)
 library(grid)
 ```
 
-The MNIST data is available from [Kaggle](https://www.kaggle.com/c/digit-recognizer/data) in CSV format, or the following code will automatically download it for you if you do not already have the training data. It contains $42,000$ scanned images of handwritten digits. We load the training data from this dataset, and use the first $49$ digits as our initial sample.
+The MNIST data is available from [Kaggle](https://www.kaggle.com/c/digit-recognizer/data) in CSV format, or the following code will automatically download it for you if you do not already have the training data. It contains 42,000 scanned images of handwritten digits. We load the training data from this dataset, and use the first 49 digits as our initial sample.
 ```{r}
 if (!file.exists('train.csv')) {
     download.file(file.path('https://github.com/quantitative-technologies',
@@ -125,7 +125,7 @@ plot_labelled_images(average_digits, 'Averaged Handwritten Digits',
                      smoothed = FALSE, inverted = TRUE, ncol = 5)
 ```
 
-The following function `examine_all_digits` can be run interactively to scan through all $42,000$ digits, $49$ at a time, by running `examine_all_digits(train)`.
+The following function `examine_all_digits` can be run interactively to scan through all 42,000 digits, 49 at a time, by running `examine_all_digits(train)`.
 ```{r eval=FALSE}
 examine_all_digits <- function(data) {
   for(i in seq(1, nrow(data), 49)) {
@@ -139,7 +139,7 @@ examine_all_digits <- function(data) {
 }
 ```
 
-Finally, we use the `plot_labelled_images` function to show $49$ randomly chosen digits.
+Finally, we use the `plot_labelled_images` function to show 49 randomly chosen digits.
 ```{r}
 random_sample <- sample_n(train, 49)
 random_digits <- transform_images(random_sample)
@@ -147,24 +147,14 @@ plot_labelled_images(random_digits, 'Random Selection', smoothed = TRUE, inverte
 ```
 
 ---
+
+The source for this article is available on [Github](https://github.com/quantitative-technologies/handwritten-digits-ggplot2).
+
+---
+
+---
 link-citations: true
 references:
-- id: fenner2012a
-  title: One-click science marketing
-  author:
-  - family: Fenner
-    given: Martin
-  container-title: Nature Materials
-  volume: 11
-  URL: 'http://dx.doi.org/10.1038/nmat3283'
-  DOI: 10.1038/nmat3283
-  issue: 4
-  publisher: Nature Publishing Group
-  page: 261-263
-  type: article-journal
-  issued:
-    year: 2012
-    month: 3
 - id: Chivers2012
   title: The essence of a handwritten digit
   author:
